@@ -109,14 +109,12 @@ Tasarım, projenin gereksinimlerini karşılar:
 
 ## 4. SQL uygulaması
 
-Proje, sırayla çalıştırılacak dört SQL betiğine ayrılmıştır:
+Tüm SQL kodu tek bir betikte toplanmıştır: [`SQLQuery1.sql`](SQLQuery1.sql). Betik sırayla şunları içerir:
 
-| Dosya | İçerik |
-|-------|--------|
-| [`sql/01_schema.sql`](sql/01_schema.sql) | Veritabanı ve tabloların oluşturulması (PK / FK tanımları) |
-| [`sql/02_inserts.sql`](sql/02_inserts.sql) | Her tabloya örnek kayıtlar |
-| [`sql/03_updates.sql`](sql/03_updates.sql) | Örnek güncelleme komutları |
-| [`sql/04_queries.sql`](sql/04_queries.sql) | `JOIN` ve `GROUP BY` içeren sorgular |
+1. Veritabanı ve tabloların oluşturulması (PRIMARY KEY / FOREIGN KEY tanımları)
+2. Her tabloya örnek kayıtlar
+3. Örnek güncelleme komutları
+4. `JOIN` ve `GROUP BY` içeren sorgular
 
 Öne çıkan iki sorgu — hangi öğrencinin hangi dersi hangi notla aldığını listeleyen `JOIN` ve öğrenci başına toplam krediyi hesaplayan `GROUP BY`:
 
@@ -148,8 +146,8 @@ Bu sorguların SSMS üzerinde çalıştırılmış çıktıları:
 ## Çalıştırma
 
 1. Microsoft SQL Server ve SSMS (ya da Azure Data Studio) gerekir.
-2. Betikleri sırayla çalıştırın: `01_schema.sql` → `02_inserts.sql` → `03_updates.sql` → `04_queries.sql`.
-3. `01_schema.sql` içindeki `CREATE DATABASE OBS` komutu veritabanını oluşturur; sonraki betikler `USE OBS` ile bu veritabanını kullanır.
+2. `SQLQuery1.sql` dosyasını açıp baştan sona çalıştırın.
+3. Betiğin başındaki `CREATE DATABASE OBS` komutu veritabanını oluşturur; `USE OBS` ile bu veritabanına geçilir ve sonraki tüm komutlar burada çalışır.
 
 ---
 
